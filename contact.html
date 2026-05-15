@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+        }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            transition: 0.3s;
+        }
+        .info-card:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-color);
+        }
+        .info-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        .faq-section {
+            margin-top: 5rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-question {
+            background: var(--surface-color);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+        }
+        .faq-question:hover {
+            border-color: var(--primary-color);
+        }
+        .faq-answer {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            border-radius: 0 0 8px 8px;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1rem 1.5rem;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Event<span>Sphere</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header fade-in">
+        <h1>Get In <span class="text-gradient">Touch</span></h1>
+        <p class="text-muted">We'd love to hear from you. Reach out to us for any queries.</p>
+    </div>
+
+    <section style="padding-top: 0;">
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <div class="info-card glass">
+                    <i class="fas fa-map-marker-alt info-icon"></i>
+                    <div>
+                        <h3>Our Location</h3>
+                        <p class="text-muted">123 Tech Avenue, Silicon Valley, CA</p>
+                    </div>
+                </div>
+                <div class="info-card glass">
+                    <i class="fas fa-phone-alt info-icon"></i>
+                    <div>
+                        <h3>Phone Number</h3>
+                        <p class="text-muted">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="info-card glass">
+                    <i class="fas fa-envelope info-icon"></i>
+                    <div>
+                        <h3>Email Address</h3>
+                        <p class="text-muted">support@eventsphere.com</p>
+                    </div>
+                </div>
+                
+                <!-- Google Map Placeholder -->
+                <div class="glass" style="height: 250px; overflow: hidden; position: relative;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.63929062107!2d-122.08624618469247!3d37.42199987982512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425def01%3A0x8e523f668cbba1e8!2sGoogleplex!5e0!3m2!1sen!2sus!4v1621535451952!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="form-container glass fade-in" style="margin: 0; padding: 2rem; width: 100%; max-width: 100%;">
+                <h2 style="margin-bottom: 2rem;">Send a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="cname">Name</label>
+                        <input type="text" id="cname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cemail">Email</label>
+                        <input type="email" id="cemail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="csubject">Subject</label>
+                        <input type="text" id="csubject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cmessage">Message</label>
+                        <textarea id="cmessage" rows="5" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-section fade-in">
+            <h2 class="section-title">Frequently Asked <span class="text-gradient">Questions</span></h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I register for an event?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Navigate to the "Register" page, fill out the form with your details, and select the event you wish to attend from the dropdown list.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there a fee for registering?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Some events are completely free, while premium events may require a registration fee. The details are provided on the specific event page.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I cancel my registration?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can cancel your registration up to 48 hours before the event starts by contacting our support team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Event<span>Sphere</span></div>
+        <p class="text-muted" style="margin-top: 1rem;">Connecting people through unforgettable experiences.</p>
+        <p class="text-muted">&copy; 2026 EventSphere. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

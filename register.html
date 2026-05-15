@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 8rem 5% 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Event<span>Sphere</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header fade-in">
+        <h1>Secure Your <span class="text-gradient">Spot</span></h1>
+        <p class="text-muted">Register for upcoming events and unlock unforgettable experiences.</p>
+    </div>
+
+    <section style="padding-top: 0;">
+        <div class="form-container glass fade-in">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Registration Form</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event">Select Event</label>
+                    <select id="event" class="form-control" required>
+                        <option value="" disabled selected>-- Choose an Event --</option>
+                        <option value="tech">Global Tech Summit 2026</option>
+                        <option value="music">Neon Nights Festival</option>
+                        <option value="startup">Startup Pitch Arena</option>
+                        <option value="art">Modern Art Expo</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 1rem;">
+                    <div style="flex: 1;">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="gender">Gender</label>
+                        <select id="gender" class="form-control" required>
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Message (Optional)</label>
+                    <textarea id="message" rows="4" class="form-control" placeholder="Any special requirements?"></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Register Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">Event<span>Sphere</span></div>
+        <p class="text-muted" style="margin-top: 1rem;">Connecting people through unforgettable experiences.</p>
+        <p class="text-muted">&copy; 2026 EventSphere. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
